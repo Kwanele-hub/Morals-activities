@@ -15,3 +15,9 @@ function getAvg(grades) {
 
 const average = getAvg(grades);
 console.log(average);
+
+function topAchieve(students){
+  let names = students.map((student) =>student.name)
+  return students = 2
+}
+console.log(topAchieve(students))
