@@ -11,7 +11,10 @@ function Nav() {
 
     return (
      <nav className="nav-bar">
+       <Link style={navStyle}  to="/">
        <h3>SPHE MOTORS</h3>
+       </Link>
+       
 
        <ul className='nav-links'>
 
@@ -30,4 +33,3 @@ function Nav() {
   }
   
   export default Nav;
-  

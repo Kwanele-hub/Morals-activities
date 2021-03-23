@@ -5,18 +5,20 @@ function Home() {
     return (
         <div>
     <h1>SPHE MOTORS ...</h1>
-    <h2>Have your work done here and you’ll never go anywhere else again.</h2>
-    {/* <Link to="/register">
-    <button >Register Car</button>
-    </Link>        */}
+    <h2>Quick. Easy. Simple. Sell your car today with immediate payment.
+.</h2>
+    <Link to="/register">
+    <button >Buy A Car</button>
+    </Link>       
     <Link to="loginForm">
-    <button>Purchase Car</button>
+    <button>Sell A Car</button>
     </Link>  
     <br></br>
-    <img src='https://cdn.pixabay.com/photo/2016/05/05/18/03/coupe-1374448_960_720.jpg' alt="logo" />
+    
+    
+    {/* <img src="https://www.webuycars.co.za/static/media/logo.4c9be247.svg" /> */}
         </div>
     )
 }
 
 export default Home
-

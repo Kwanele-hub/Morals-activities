@@ -79,9 +79,9 @@ function LoginForm() {
           <td>{state.email} </td>
           <td>{state.password}</td>
         </table>
-        <Link to="/about"> 
-      <button>SUBMIT</button>
-      </Link>
+        {/* <Link to="/about"> 
+      <button onClick={this.submitD}>SUBMIT</button>
+      </Link> */}
         
         
       </div>
