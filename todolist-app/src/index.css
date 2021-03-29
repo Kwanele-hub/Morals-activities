@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Slabo+27px');
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  background: rgb(113, 113, 124);
+  min-height:100vh;
+}
+
+.todo{
+  display:flex;
+  background: linear-gradient(to right, #e3f2fd 68%,#cce7f9 100%);
+  padding:0.5em;
+  align-items:flex-start;
+  margin-bottom: 0.5em;
+  box-shadow:2px 2px 2px rgba(0,0,0,0.3);
+  max-height:100px;
+  overflow:hidden;
+  transition: all 300ms ease;}
+  
+  button{
+    margin-right:1em;
+  }
+  .deleted{
+    max-height:0px;
+    padding:0;
+    margin-bottom:0;
+   
+  }
+
+
+button{
+  border:0;
+  color:#fff;
+  outline:none;
+}
+
+.remove{
+  color: #f12112;
+  background:none;
+}
+
+.todo-list{
+
+  max-width:400px;
+  margin:3em auto 0;
+  background: linear-gradient(to right, #f7f7f7 54%,#e8f4fc 100%);
+  padding:1em;
+  box-shadow:5px 5px 10px rgba(0,0,0,0.3);}
+
+  h1{
+    margin-top:0;
+    color:#212121;
+    font-family: 'Slabo 27px', serif;
+    text-align:center;
+    
+  }
+
+  .controls{
+    display:flex;
+    margin-top:1em;}
+
+    input{
+      flex:1;
+      padding:0.5em;
+      border: 1px solid rgba(#b2ddd9,0.5);
+      border-right:0px;
+      outline:none;
+    }
+    button{
+      background: linear-gradient(to right, #009688 1%,#005e6b 100%);
+      color:rgb(255, 255, 255);
+      padding:0.5em;
+    }
+  
+  
