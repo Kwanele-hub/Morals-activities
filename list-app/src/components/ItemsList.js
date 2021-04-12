@@ -1,23 +1,22 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { updateItem } from '../actions'
+import {  useSelector } from 'react-redux'
+
+
 import Item from './Item';
 
+const ItemsList = () => {
+    const items = useSelector(state => state.items.todoList)
+    
+    const removeItem =(id)=>{
+    return items.filter(item=> item.id !== id)
+    }
+        return(
 
-const ItemsList = ({ items, updateItem }) => (
     <ul className={'item-list'}>
-        {items.map(item => (
-            <Item key={ item.id } {...item} onClick={() => updateItem(item.id)}/>
+        {items && items.map(item => (
+            <Item key={ item.id } {...item}  remove={removeItem}/>
         ))}
     </ul>
-)
-
-const mapStateToProps = state => ({
-    items: state.items
-})
-
-const mapDispatchToProps = dispatch => ({
-    updateItem: id => dispatch(updateItem(id))
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(ItemsList)
+    )
+} 
+export default ItemsList

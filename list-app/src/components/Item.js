@@ -1,12 +1,18 @@
 import React from 'react'
+import {useDispatch} from 'react-redux'
+import { delteItem } from '../actions'
 
 
-const Item = ({ onClick, completed, text, number }) => (
-  <li className={'item'}
-    onClick={onClick}
-  >
+const Item = ({  completed, text, number,remove ,id}) => {
+
+
+const dispatch = useDispatch()
+  return(
+  <li className='item'>
     {text}
-  </li>
-)
+    <h5 onClick={()=> dispatch(delteItem(remove(id)))}>X</h5>
+  </li>)
+}
+
 
 export default Item

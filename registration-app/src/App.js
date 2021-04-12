@@ -1,11 +1,20 @@
 // import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 import Form from './components/Form';
+import Header from './components/Header';
+import SearchButton from './components/Search-input';
+
 
 function App() {
   return (
     <div className="App">
-      <Form />
+      <Header />
+    <Form />
+    {/* <Button /> */}
+    
+    <SearchButton />
+    
     </div>
   );
 }

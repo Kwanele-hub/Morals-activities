@@ -6,7 +6,7 @@ export const addItems = item => ({
     text: item.text
 });
 
-export const updateItem = id => ({
-    type: 'UPDATE_ITEM',
-    id
+export const delteItem = id => ({
+    type: 'DELETE_ITEM',
+    payload: id
 });

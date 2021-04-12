@@ -7,6 +7,9 @@ import ItemsList from './components/ItemsList'
 const App = ({ quality, dispatch }) => {
     let input, item;
 
+
+
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!input.value.trim()) { return }
