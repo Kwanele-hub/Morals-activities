@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import todoReducer from './todoReducer'
+import formReducer from '../actions/todoDetails'
 
 const rootReducer = combineReducers({
-  todos: todoReducer,
+  form: formReducer,
 });
 
 export default rootReducer;

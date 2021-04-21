@@ -1,7 +1,7 @@
-export const addTodo = (todo) => {
+export const addTodo = (form) => {
     return {
-      type: 'ADD_TODO',
-      payload: todo
+      type: 'ADD_DETAILS',
+      payload: form
     }
   }
   
