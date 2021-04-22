@@ -12,7 +12,7 @@ export const deleteItem = id => ({
 });
 
 export const editItem = id =>({
-    type: 'EDIT_ITEM',
+    type: 'EDIT_ITEMS',
     payload: id
 })
 

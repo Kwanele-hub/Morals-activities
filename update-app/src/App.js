@@ -52,6 +52,7 @@ const handleSubmit = (event) => {
                 </div>
             </form>
             <ItemsList/>
+            
         </div>
       
     </div>

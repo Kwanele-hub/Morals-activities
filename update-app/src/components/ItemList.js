@@ -8,16 +8,15 @@ const ItemsList = () => {
     const removeItem =(id)=>{
     return items.filter(item=> item.id !== id)
     }
-    const editItem = (id)=>{
-        return(item=> item.id ===id)
-    }
+    
     const completedItem = () =>({
     })
         return(
+            
 
     <ul className={'item-list'}>
         {items && items.map(item => (
-            <Item key={ item.id } {...item}  remove={removeItem} edit={editItem} complete={completedItem} />
+            <Item key={ item.id } {...item}  remove={removeItem} complete={completedItem} />
         ))}
     </ul>
     )

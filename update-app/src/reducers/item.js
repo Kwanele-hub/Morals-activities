@@ -9,7 +9,11 @@ const items = (state = initialState, action) => {
             return {
                 ...state, todoList: [...state.todoList, newData]
             }
-                
+                case 'EDIT_ITEMS':
+                    
+                    return{
+                        ...state, todoList:[...state.todoList]
+                    }
                 
             
         case 'DELETE_ITEM':

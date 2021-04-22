@@ -1,15 +1,35 @@
-import React from 'react'
-import {useDispatch} from 'react-redux'
-import { deleteItem, editItem, completeItem } from '../actions'
+import React, {useState} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import { deleteItem, completeItem, editItem } from '../actions'
 
 
 
-const Item = ({firstName,lastName,workingOn,remove ,id, edit, complete}) => {
+
+const Item = ({firstName,lastName,workingOn,remove ,id, complete,completedTodo}) => {
+  const [edit,setEdit] = useState(false);
+  const [todo,setTodo] = useState(workingOn)
+  const todoList = useSelector(state =>state.items.todoList)
+  console.log(todoList)
   
+const handleEditSubmit = (id) => {
+let newObj = todoList.find(newItem => newItem.id === id )
+newObj.workingOn = todo
+return dispatch(editItem(newObj))
+
+
+  }
+const handleEditChange = (e) => {
+    setTodo(e.target.value);
+  };
+  const handleEdit = () => {
+    setEdit(!edit);
+  };
+
 
 const dispatch = useDispatch()
   return(
-  <li className='item'>
+    <div>
+ <li className='item'>
      <table>
        <tbody>
        <tr>
@@ -26,10 +46,42 @@ const dispatch = useDispatch()
         </table>
     
     <button onClick={()=> dispatch(deleteItem(remove(id)))}>delete</button>
-    <button onClick={()=> dispatch (editItem(edit(id)))}>edit</button>
+
     <button onClick={()=> dispatch (completeItem(complete(id)))}>complete</button>
     
-  </li>)
+  </li>
+  <div className="todo" key={workingOn.id}>
+      {!edit ? (
+        <>
+          <input
+            type="checkbox"
+            checked={workingOn.completed}
+            onChange={() => completedTodo(workingOn.id)}
+            disabled={workingOn.completed ? true : false}
+          />{" "}
+          <span>{workingOn.task}</span>{" "}
+          <button onClick={handleEdit} disabled={workingOn.completed}>
+            Edit
+          </button>
+        </>
+      ) : (
+        <>
+          {" "}
+          <input
+            type="text"
+            value={todo}
+            name="todo"
+            onChange={handleEditChange}
+          />
+          <button onClick={handleEdit}>Cancel</button>
+          <button type="submit" onClick={() => handleEditSubmit(id)}>
+            Save
+          </button>
+        </>
+      )}
+    </div>
+    </div>
+  )
 }
 
 
