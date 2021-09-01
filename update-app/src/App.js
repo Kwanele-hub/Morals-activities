@@ -21,10 +21,8 @@ const App = ({ dispatch }) => {
 
 const handleSubmit = (event) => {
   event.preventDefault();
-  event.target.reset();
-  
-
   dispatch(addItems(formData));
+  setFormData({firstName: '', lastName:'', workingOn:'',})
   
 };
 
