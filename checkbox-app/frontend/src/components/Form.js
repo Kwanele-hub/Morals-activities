@@ -23,6 +23,8 @@ function Form() {
             placeholder="Ingredients"
             >
           </textarea>
+          <br></br>
+          <button>add ingredients</button>
         </div>
         </div>
     )

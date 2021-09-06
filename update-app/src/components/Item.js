@@ -5,12 +5,12 @@ import { deleteItem, completeItem, editItem } from '../actions'
 
 
 
-const Item = ({firstName,lastName,workingOn,remove ,id, complete,completedTodo}) => {
+const Item = ({firstName,lastName,workingOn,remove ,id, complete,}) => {
   const [edit,setEdit] = useState(false);
   const [todo,setTodo] = useState(workingOn)
   const todoList = useSelector(state =>state.items.todoList)
-  console.log(todoList)
   
+
 const handleEditSubmit = (id) => {
 let newObj = todoList.find(newItem => newItem.id === id )
 newObj.workingOn = todo
@@ -32,6 +32,7 @@ const dispatch = useDispatch()
  <li className='item'>
      <table>
        <tbody>
+         
        <tr>
             <th>Name</th>
           <th>Surname</th>
@@ -46,19 +47,10 @@ const dispatch = useDispatch()
         </table>
     
     <button onClick={()=> dispatch(deleteItem(remove(id)))}>delete</button>
-
-    <button onClick={()=> dispatch (completeItem(complete(id)))}>complete</button>
-    
-  </li>
-  <div className="todo" key={workingOn.id}>
+    {workingOn.id}
       {!edit ? (
         <>
-          <input
-            type="checkbox"
-            checked={workingOn.completed}
-            onChange={() => completedTodo(workingOn.id)}
-            disabled={workingOn.completed ? true : false}
-          />{" "}
+      
           <span>{workingOn.task}</span>{" "}
           <button onClick={handleEdit} disabled={workingOn.completed}>
             Edit
@@ -79,7 +71,11 @@ const dispatch = useDispatch()
           </button>
         </>
       )}
-    </div>
+    
+    <button onClick={()=> dispatch (completeItem(complete(id)))}>complete</button>
+    
+  </li>
+  
     </div>
   )
 }
